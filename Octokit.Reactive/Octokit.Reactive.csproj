@@ -8,7 +8,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <CoreOnly Condition="$(CoreOnly) == '' and $([MSBuild]::IsOsPlatform('Windows'))">False</CoreOnly>
     <TargetFrameworks>netstandard1.1;netstandard2.0</TargetFrameworks>
-    <TargetFrameworks Condition="$(CoreOnly) != '' and !$(CoreOnly)">$(TargetFrameworks);net45;net46</TargetFrameworks>
+    <TargetFrameworks Condition="$(CoreOnly) != '' and !$(CoreOnly)">$(TargetFrameworks);net46</TargetFrameworks>
     <AssemblyName>Octokit.Reactive</AssemblyName>
     <PackageId>Octokit.Reactive</PackageId>
     <DebugType>embedded</DebugType>
@@ -53,7 +53,7 @@
     <DotNetCliToolReference Include="dotnet-sourcelink" Version="2.8.2" />
   </ItemGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' or  '$(TargetFramework)' == 'net46'  ">
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net46' ">
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
